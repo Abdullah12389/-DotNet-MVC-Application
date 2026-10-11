@@ -1,0 +1,29 @@
+@model List<Student>
+
+<div>
+    <h2>All Registered Students</h2>
+    <hr />
+
+    <div>
+        @foreach (Student std in Model)
+        {
+            <div>
+                <p><strong>ID:</strong> @std.StudentId</p>
+                <p><strong>Name:</strong> @std.StudentName</p>
+                <p><strong>Registration No:</strong> @std.RegistrationNumber</p>
+                <p><strong>Department:</strong> @std.Department</p>
+                <p><strong>Attendance:</strong> @std.AttendancePercentage%</p>
+                
+                <div>
+                    <button><a asp-action="Edit" asp-route-id="@std.StudentId">Edit Student</a></button>
+                    <button><a asp-action="Delete" asp-route-id="@std.StudentId">Delete Student</a></button>
+                </div>
+                <hr />
+            </div>
+        }
+    </div>
+
+    <div>
+        <button><a asp-action="Create">+ Add New Student</a></button>
+    </div>
+</div>

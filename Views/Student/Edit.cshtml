@@ -1,0 +1,40 @@
+@model Student
+
+<div>
+    <h2>Edit Student Information</h2>
+    <hr />
+
+    <div>
+        <div>
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <input type="hidden" asp-for="StudentId" value="@Model.StudentId"/>
+                
+                <div>
+                    <label asp-for="StudentName">Student Name</label>
+                    <input asp-for="StudentName" value="@Model.StudentName"/>
+                </div>
+
+                <div>
+                    <label asp-for="RegistrationNumber">Registration Number</label>
+                    <input asp-for="RegistrationNumber" value="@Model.RegistrationNumber"/>
+                </div>
+
+                <div>
+                    <label asp-for="Department">Department</label>
+                    <input asp-for="Department" value="@Model.Department"/>
+                </div>
+
+                <div>
+                    <label asp-for="AttendancePercentage">Attendance Percentage</label>
+                    <input asp-for="AttendancePercentage" type="number" step="0.01" min="0" max="100" value="@Model.AttendancePercentage"/>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <button type="submit">Update Changes</button>
+                    <a asp-action="Index">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

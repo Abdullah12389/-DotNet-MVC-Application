@@ -1,0 +1,39 @@
+@model Student
+
+<div>
+    <h2>Add New Student</h2>
+    <hr />
+
+    <div>
+        <div>
+            <form asp-action="Create" method="post">
+
+                <div>
+                    <label asp-for="StudentName">Student Name</label>
+                    <input asp-for="StudentName"/>
+                </div>
+
+                <div>
+                    <label asp-for="RegistrationNumber">Region Number</label>
+                    <input asp-for="RegistrationNumber"/>
+                </div>
+
+                <div>
+                    <label asp-for="Department">Department</label>
+                    <input asp-for="Department"/>
+                    <span asp-validation-for="Department"></span>
+                </div>
+
+                <div>
+                    <label asp-for="AttendancePercentage">Attendance Percentage</label>
+                    <input asp-for="AttendancePercentage" />
+                </div>
+
+                <div>
+                    <button type="submit">Save Student</button>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
