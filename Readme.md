@@ -98,10 +98,6 @@ The application isolates database operations inside a dedicated `StudentReposito
   };
   updateStudent.Parameters.Add(attendancePercent);
 
-```
-
----
-
 ### 3. `FillSchema` vs. `Fill` Runtime Exceptions During Edits
 
 * **Problem:** Attempting to update or delete a student caused an `IndexOutOfRangeException` when accessing `studentTable.Rows[0]`.
@@ -165,7 +161,3 @@ dotnet run
 ```
 
 Navigate to `https://localhost:5001/Student` in your web browser.
-
-```
-
-```
